@@ -1,98 +1,144 @@
-<html> 
-  
+<!DOCTYPE html>
+<html>
   <head>
-    
-    <style>
-      body {
-          background-color: lightblue;
+    <meta charset="utf-8">
+    <meta name="generator" content="GitLab Pages">
+    <title>Meine Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    function rechne() {
+      // prüf erstmal, ob die erste Zahl gegeben ist.
+      var x = document.getElementById('x').value;
+      // wenn nicht, dann zeig kein Ergebnis an sondern brich ab.
+      if(x === '') {
+        document.getElementById('ergebnis').textContent = '';
+        return;
       }
-
-      h1 {
-          color: green;
-          text-align: center;
+      // Sonst schau mal, ob das wirklich eine Zahl ist.
+      if(isNaN(x)) {
+        // wenn nicht, dann zeige einen Fehler an und brich ab.
+        document.getElementById('ergebnis').textContent = 'Die erste Zahl ist leider keine Zahl.';
+        return;
       }
-      
-      h2 {
-          color: black;
-          text-align: center;
+      // prüf, ob die zweite Zahl gegeben ist.
+      var y = document.getElementById('y').value;
+      // wenn nicht, dann zeig kein Ergebnis an sondern brich ab.
+      if(y === '') {
+        document.getElementById('ergebnis').textContent = '';
+        return;
       }
-      
-      p { 
-        color: black; 
-        text-align: center;
+      // Sonst schau mal, ob das wirklich eine Zahl ist.
+      if(isNaN(y)) {
+        // wenn nicht, dann zeige einen Fehler an und brich ab.
+        document.getElementById('ergebnis').textContent = 'Die zweite Zahl ist leider keine Zahl.';
+        return;
       }
-      
-      .header {
-        background-color: #122f78;
-        padding: 15px;
-        text-align: center;
-        font-size: 20px;
+      // führe die gewünschte Rechnung aus
+      if(document.getElementById('plus').checked) {
+        var ergebnis = Number(x) + Number(y);
+        document.getElementById('ergebnis').textContent = x + ' + ' + y + ' = ' + ergebnis;
+        return;
+      } else if(document.getElementById('minus').checked) {
+        var ergebnis = Number(x) - Number(y);
+        document.getElementById('ergebnis').textContent = x + ' - ' + y + ' = ' + ergebnis;
+        return;
+      } else if(document.getElementById('mal').checked) {
+        var ergebnis = Number(x) * Number(y);
+        document.getElementById('ergebnis').textContent = x + ' * ' + y + ' = ' + ergebnis;
+        return;
+      } else if(document.getElementById('geteilt').checked) {
+        var ergebnis = Number(x) / Number(y);
+        document.getElementById('ergebnis').textContent = x + ' / ' + y + ' = ' + ergebnis;
+        return;
+      } else {
+        // wenn keine rechenoperation ausgewählt ist, zeige nichts an
+        // und brich ab
+        document.getElementById('ergebnis').textContent = '';
+        return;
       }
-      
-      .sidenav {
-        height: 100%;
-        width: 200px;
-        position: fixed;
-        z-index: 1;
-        top: 150;
-        left: 10;
-        background-color: #122f78;
-      ;
-        overflow-x: hidden;
-        color: white
-      }
-      
-      .sidenav a {
-        color: white;
-        padding: 16px;
-        display: block;
-      }
-      
-      .sidenav a:hover {
-        background-color: #ddd; 
-        color: #122f78;
-      }
-      
-      .center {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-      }
-      
-    </style>
-    
-    <title> Flo's Steckbrief </title>
-    
+    }
+    </script>
   </head>
-  
-  
   <body>
-    
-    <div class="header">
-          <h1> Flo's Steckbrief </h1>
+  <div id="main">
+  <!-- Navigationsleiste -->
+  <div id="navigation">
+    <div><a href="#willkommen">Benjamin's Seite</a></div>
+    <div><a href="#ameisen">Ameisen</a></div>
+    <div><a href="#pfade">Pfade</a></div>
+    <div><a href="#lebenslauf">Lebenslauf</a></div>
+  </div>
+  <!-- Willkommen -->
+  <div id="willkommen" class="box1">
+    <div class="foto">
+    <!-- <img alt="Foto von Benjamin" src="https://bpaassen.gitlab.io/BenjaminPaassen.jpg"/> -->
     </div>
-    
-    <div class="sidenav">
-      <a href="index.html"> Homepage</a>
-      <a href="Hobbies.html"> Hobbies</a>
-      <a>Kontakt</a>
+    <div class="inhalt">
+    <h1>Willkommen</h1>
+    <p>
+    auf meiner Website. Ich bin Benjamin und ich interessiere mich für <a href="#ameisen">Ameisen</a>,
+    weil sie gut <a href="#pfade">Pfade</a> finden können. Was ich sonst noch so mache findet ihr
+    auf meinem <a href="#lebenslauf">Lebenslauf</a>.
+    </p>
     </div>
-    
-    <h2> Lieblings Urlaubsorte </h2>
-    
-    <p> 
-      Mein lieblings Urlaubsort ist der Balaton See. Kreta ist auch ganz ok ;) 
+  </div>
+  <!-- Ameisen -->
+  <div id="ameisen" class="box2">
+    <div class="foto">
+    <!-- <img alt="Eine Wüstenameise der Art Cataglyphis" src="cataglyphis.jpg"/> -->
+    </div>
+    <div class="inhalt">
+    <h1>Ameisen</h1>
+    <p>
+    finde ich besonders faszinierend, weil sie so gut darin sind, <a href="#pfade">Pfade</a> zu finden. Hier seht ihr eine Cataglyphis-Wüstenameise.
+    Solche Ameisen können, wenn sie auf Futtersuche gehen, den schnellsten Weg zurück in ihr Nest finden. Das ist beeindruckend, weil die Ameisen
+    sich dafür merken müssen, wie viele Schritte sie bereits in welche Richtungen gegangen sind. Dafür
+    <a href="https://de.wikipedia.org/wiki/Cataglyphis#Orientierungsverm%C3%B6gen" target="_blank">zählen sie wohl ihre Schritte und orientieren
+    sich am ultravioletten Licht der Sonne</a>.
     </p>
-    
-    <p> 
-      Ich höre gerne PrinzPi Musik.  
+    </div>
+  </div>
+  <!-- Taschenrechner -->
+  <div id="taschenrechner" class="box1">
+    <div class="foto">
+      <p><label for="x">Erste Zahl: </label><input id="x" type="text" onchange="rechne()"/></p>
+      <p><label for="x">Zweite Zahl: </label><input id="y" type="text" onchange="rechne()"/></p>
+      <p>Rechenoperation:
+        <input name="operation" type="radio" id="plus" onclick="rechne()"/><label for="plus">+</label> 
+        <input name="operation" type="radio" id="minus" onclick="rechne()"/><label for="minus">-</label> 
+        <input name="operation" type="radio" id="mal" onclick="rechne()"/><label for="mal">*</label> 
+        <input name="operation" type="radio" id="geteilt" onclick="rechne()"/><label for="geteilt">/</label>
+      </p>
+      <p id="ergebnis">
+      </p>
+    </div>
+    <div class="inhalt">
+    <h1>Rechnen</h1>
+    <p>
+    kann ich nur so mittelgut. Deshalb benutze ich lieber Computer, die das für
+    mich machen. Hier seht ihr zum Beispiel einen ganz einfachen Taschenrechner,
+    der für euch etwas rechnen kann. Gib einfach zwei Zahlen ein, wähle aus,
+    welche Rechenoperation du auf die zwei Zahlen anwenden willst und der Rechner
+    gibt dir ein Ergebnis!
     </p>
-    
-    <IMG SRC="picture.png" alt="Mitglied von StarCode" width="500" height="600" class="center">
-    
-    
+    </div>
+  </div>
+  <!-- Lebenslauf -->
+  <div id="lebenslauf" class="box2">
+    <div class="foto">
+    <img alt="Bild einer Chronik (Symbolbild für den Lebenslauf)" src="chronik.jpg"/>
+    </div>
+    <div class="inhalt">
+    <h1>Lebenslauf</h1>
+    <div id="lebenslauf_tabelle">
+      <div>2020-heute</div><div>KI-Forschung in Sydney und Berlin</div>
+      <div>2015-2019</div><div>Doktorarbeit an der Universität Bielefeld</div>
+      <div>2010-2015</div><div>Studium an der Universität Bielefeld</div>
+      <div>2000-2009</div><div>Abitur am Don-Bosco Gymnasium Essen</div>
+      <div>1996-2000</div><div>Rosenhügel-Grundschule Essen</div>
+    </div>
+    </div>
+  </div>
+  </div>
   </body>
-  
-  
 </html>
