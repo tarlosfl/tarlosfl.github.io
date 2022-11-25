@@ -29,7 +29,7 @@ please contact us at starcode.de
     font-size : 24px;
     font-family : LoftygoalsRegular, serif;
     background-image: url("Snow_wallpaper.jpg");
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: #b8cce4;
   }
@@ -67,7 +67,6 @@ please contact us at starcode.de
     color: #b8cce4;
   }
 
-
   h1 {
     font-size : 52px;
     font-family : ChristmasTree, serif;
@@ -76,9 +75,11 @@ please contact us at starcode.de
 <script>
 function basteln() {
   var text_vorne = document.getElementById('text_vorne').value;
-  var text_innen = document.getElementById('text_innen').value;
-  var bastel_ergebnis = document.getElementById('bastel_ergebnis');
-  bastel_ergebnis.innerHTML='Fertig! Du findest die Grußkarte an <a href="karte.html?vorne=' + text_vorne + '&innen=' + text_innen + '">dieser Stelle</a>.';
+  var text_innen = document.getElementById('text_innen').value.replace('\n', '<br/>');
+  // Erstelle eine URL für die eingegebenen Texte
+  var bastel_url = 'karte.html?vorne=' + text_vorne + '&innen=' + text_innen;
+  // Öffne die URL in einem neuen Tab
+  window.open(bastel_url, '_blank');
 }
 </script>
 </head>
@@ -87,10 +88,10 @@ function basteln() {
 <h1>Merry Christmas!</h1>
 <p>Bald ist es Weihnachten und wir möchten euch eine Freude machen!</p>
 <p>Mit dieser Website könnt ihr euren Liebsten eine Grußkarte schicken!</p>
-<p>Was soll vorne drauf stehen? <input id="text_vorne" type="text"></input></p>
-<p>Und was soll in der Karte drin stehen? <input id="text_innen" type="text"></input></p>
+<p>Was soll vorne drauf stehen? <input id="text_vorne" type="text" value="Merry Christmas!"></input></p>
+<p>Und was soll in der Karte drin stehen?</p>
+<textarea  id="text_innen" rows="6" cols="30">Alles gute zu Weihnachten!</textarea>
 <p><button onclick="basteln()">Bastel mir meine Grußkarte!</button></p>
-<p id="bastel_ergebnis"></p>
 <p>Viele Grüße,</p>
 <p>Euer <img src="Starcode_Logo.png" width="30"></img>-Team.</p>
 </div>
