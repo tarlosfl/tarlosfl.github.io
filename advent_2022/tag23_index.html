@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<!--
-Adventskalender-Website
-Copyright (C) 2022 - Benjamin Paaßen, Florian Tarlosy
-Starcode e.V.
-
-This example website is intended for teaching and learning.
-Feel free to use and share it for such purposes. For anything else,
-please contact us at starcode.de
-
--->
 <html lang="de">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -63,20 +53,11 @@ please contact us at starcode.de
     background-color: #26336a;
     color: #b8cce4;
   }
-
-  h1 {
-    font-size : 52px;
-    font-family : ChristmasTree, serif;
-  }
 </style>
 <script>
 function basteln() {
   var text_vorne = document.getElementById('text_vorne').value;
-  var text_innen = document.getElementById('text_innen').value.replace('\n', '<br/>');
-  // Erstelle eine URL für die eingegebenen Texte
-  var bastel_url = 'karte.html?vorne=' + text_vorne + '&innen=' + text_innen;
-  // Öffne die URL in einem neuen Tab
-  window.open(bastel_url, '_blank');
+  alert('Dieser Text soll vorn auf der Karte stehen: ' + text_vorne);
 }
 </script>
 </head>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Starcode-Grußkarte ⚹</title>
+<style>
+  @font-face {
+    font-family: LoftygoalsRegular;
+    src: url(LoftygoalsRegular.otf);
+  }
+
+  @font-face {
+    font-family: ChristmasTree;
+    src: url(ChristmasTree.ttf);
+  }
+
+  body {
+    font-size : 24px;
+    font-family : LoftygoalsRegular, serif;
+  }
+
+  h1 {
+    font-size : 30px;
+    font-family : ChristmasTree, serif;
+    background-color: #fcf1bb;
+  }
+
+  #vorne {
+    background: url('karte_front.jpg');
+    background-size: cover;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    height: 400px;
+  }
+
+  #innen-links {
+    background-color: #26336a;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 400px;
+  }
+
+  #innen-rechts {
+    background-color: #ffffff;
+    padding: 15px;
+    width: 270px;
+    height: 370px;
+  }
+</style>
+</head>
+<body>
+<div id="karte">
+  <div id="innen-rechts">
+    <p id="text_innen">Alles gute zu Weihnachten!</p>
+  </div>
+  <div id="innen-links">
+    <img src="Starcode_Logo.png" width="120"></img>
+  </div>
+  <div id="vorne">
+    <h1 id="text_vorne">Merry Christmas!</h1>
+  </div>
+</div>
+</body>
+</html>
+
