@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<title>Starcode-Grußkarte ⚹</title>
+<title>Starcode-Grußkarte *</title>
 <style>
   @font-face {
     font-family: LoftygoalsRegular;
@@ -58,6 +58,10 @@
     box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
   }
 
+  #innen-links img {
+    transform: scaleX(-1);
+  }
+
   #karte:hover #innen-rechts {
     transform: rotateY(-20deg);
     box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
@@ -93,6 +97,7 @@
 <script>
 function beschrifte_karte() {
   var url_infos = new URLSearchParams(window.location.search)
+  /* new */
   // setze den Text vorn auf der Karte
   var text_vorne = url_infos.get('vorne');
   if(text_vorne != null) {
@@ -103,6 +108,7 @@ function beschrifte_karte() {
   if(text_innen != null) {
     document.getElementById('text_innen').innerHTML = text_innen;
   }
+  /* /new */
 }
 </script>
 </head>
