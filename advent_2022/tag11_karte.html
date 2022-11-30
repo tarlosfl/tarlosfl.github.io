@@ -35,8 +35,10 @@
     background-color: #fcf1bb;
   }
 
-/* new */
   #vorne, #innen-links, #innen-rechts {
+/* new */
+/* Hier sagen wir, dass es einen 3D-Effekt gibt und wie lange der
+dauern soll */
     transform-style: preserve-3d;
     transform-origin: left center;
     transition: transform .5s ease-in-out, box-shadow .5s ease-in-out;
@@ -45,6 +47,9 @@
     left: 0;
   }
 
+/* Hier legen wir den 3D-Effekt fest. Die Vorderseite der Karte
+soll sich um 160 Grad nach links drehen, wenn man mit dem Mauszeiger
+darüber geht. */
   #karte:hover #vorne {
     transform: rotateY(-160deg);
     box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);

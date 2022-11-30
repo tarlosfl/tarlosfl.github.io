@@ -14,17 +14,20 @@
     src: url(ChristmasTree.ttf);
   }
 
-/* new */
   body {
     font-size : 24px;
     font-family : LoftygoalsRegular, serif;
+/* new */
+/* Die Karte soll auf dem Bildschirm zentriert sein */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+/* Wir schaffen Platz für einen 3D Effekt für später */
     perspective: 1200px;
   }
 
+/* Wir bereiten einen 3D-Effekt vor */
   #karte {
     transform-style: preserve-3d;
     margin-top: 100px;

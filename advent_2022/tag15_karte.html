@@ -97,7 +97,9 @@
 <script>
 function beschrifte_karte() {
   /* new */
+  /* Hier holen wir uns die Informationen, die in der URL stecken */
   var url_infos = new URLSearchParams(window.location.search)
+  /* Hier zeigen wir an, was in der URL hinter ?vorne= steht */
   var text_vorne = url_infos.get('vorne');
   alert('Der Text für die Vorderseite der Karte ist: ' + text_vorne);
   /* /new */

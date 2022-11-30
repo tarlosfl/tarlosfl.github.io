@@ -58,6 +58,7 @@
 function basteln() {
   var text_vorne = document.getElementById('text_vorne').value;
   /* new */
+  /* Und hier holen wir uns den Text, der innen stehen soll */
   var text_innen = document.getElementById('text_innen').value.replace('\n', '<br/>');
   // Erstelle eine URL für die eingegebenen Texte
   var bastel_url = 'karte.html?vorne=' + text_vorne + '&innen=' + text_innen;
